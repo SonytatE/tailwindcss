@@ -8,21 +8,33 @@
     <link href="./style.css" rel="stylesheet">
 </head>
 
-<body class="font-roboto">
+<body class="bg-[#f1f2f4]">
     <!-- header start -->
     <header>
-        <div class="container mx-auto flex justify-between items-center p-4 bg-white shadow-md">
-            <div class="flex">
-                <div>
-                    <img src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/fkheaderlogo_exploreplus-44005d.svg"
-                        alt="flipkart">
-                </div>
-                <div>
-                    <div class="flex items-center p-2 border border-gray-300 rounded-md">
-                        <input type="text" placeholder="Search..."
-                            class="flex-grow px-2 text-lg border-none outline-none">
-                        <div class="p-2 bg-gray-200 cursor-not-allowed rounded-r-md">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+        <section class="mb-3 bg-white">
+            <div class="container mx-auto h-[60px] flex items-center justify-between px-3 md:px-5 lg:px-8 bg-light-400">
+                <!-- Left Section: Hamburger + Logo -->
+                <div class="flex items-center space-x-2 md:space-x-4">
+                    <!-- Hamburger Menu (mobile only) -->
+                    <button class="block md:hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor"
+                            class="bi bi-list" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M2.5 12.5a.5.5 0 0 1 0-1h11a.5.5 0 0 1 0 1h-11zm0-4a.5.5 0 0 1 0-1h11a.5.5 0 0 1 0 1h-11zm0-4a.5.5 0 0 1 0-1h11a.5.5 0 0 1 0 1h-11z" />
+                        </svg>
+                    </button>
+                    <!-- Logo -->
+                    <div class="flex-shrink-0">
+                        <img src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/fkheaderlogo_exploreplus-44005d.svg"
+                            alt="Flipkart Logo" class="w-[160px] h-[40px]" />
+                    </div>
+                    <!-- Search bar (hidden on mobile) -->
+                    <div class="justify-center flex-grow hidden md:flex md:ml-6 lg:ml-8">
+                        <div
+                            class="w-full lg:w-[773px] lg:h-[40px] max-w-[730px] flex items-center border border-gray-300 rounded bg-gray-200 px-3 py-2">
+                            <input type="text" placeholder="Search..."
+                                class="w-full h-full text-sm font-medium bg-gray-200 outline-none" />
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                 stroke-linejoin="round" class="text-gray-500">
                                 <circle cx="11" cy="11" r="8"></circle>
@@ -30,443 +42,667 @@
                             </svg>
                         </div>
                     </div>
-                </div>
-                <div>
-                    <nav class="flex items-center space-x-6 p-4">
-                        <!-- Login Dropdown -->
+                    <!-- Right Section -->
+                    <div class="flex items-center space-x-6">
+                        <!-- Profile SVG (visible before login button) -->
+                        <div class="block">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                class="bi bi-person-circle" viewBox="0 0 16 16">
+                                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+                                <path fill-rule="evenodd"
+                                    d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
+                            </svg>
+                        </div>
+                        <!-- Login Button -->
                         <div class="relative group">
-                            <button class="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600">
-                                Login
-                            </button>
+                            <button class="text-sm font-semibold">Login</button>
+                            <!-- Dropdown menu (hidden until hover) -->
                             <div
-                                class="absolute hidden group-hover:block mt-2 w-40 bg-white border border-gray-200 rounded-md shadow-lg z-10">
-                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">My
-                                    Profile</a>
-                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Orders</a>
-                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Wishlist</a>
-                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Rewards</a>
-                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Gift
-                                    Cards</a>
+                                class="absolute z-10 hidden w-40 py-2 mt-2 text-sm bg-white border shadow-md group-hover:block">
+                                <a href="#" class="block px-4 py-1 hover:bg-gray-100">My Profile</a>
+                                <a href="#" class="block px-4 py-1 hover:bg-gray-100">Orders</a>
+                                <a href="#" class="block px-4 py-1 hover:bg-gray-100">Wishlist</a>
+                                <a href="#" class="block px-4 py-1 hover:bg-gray-100">Rewards</a>
+                                <a href="#" class="block px-4 py-1 hover:bg-gray-100">Gift Cards</a>
                             </div>
                         </div>
-
-                        <!-- Cart Button -->
-                        <div>
-                            <button class="px-4 py-2 bg-gray-100 text-gray-800 rounded-md hover:bg-gray-200">
-                                Cart
-                            </button>
+                        <!-- Cart & Seller (hidden on mobile) -->
+                        <div class="hidden text-sm font-semibold md:block">
+                            <button>Cart</button>
                         </div>
-
-                        <!-- Become a Seller -->
-                        <div>
-                            <button class="px-4 py-2 bg-yellow-400 text-black rounded-md hover:bg-yellow-500">
-                                Become a Seller
-                            </button>
+                        <div class="hidden text-sm font-semibold md:block">
+                            <button>Become a Seller</button>
                         </div>
-                    </nav>
+                    </div>
                 </div>
-                <div>
-                    <button aria-label="More options">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </button>
-                    <ul>
-                        <li><a href="#">Option 1</a></li>
-                        <li><a href="#">Option 2</a></li>
-                        <li><a href="#">Option 3</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+        </section>
     </header>
     <!-- header end -->
     <!-- main start -->
     <main>
+        <section>
+            <!-- Mobile Search Bar -->
+            <div class="px-3 py-2 bg-white md:hidden">
+                <div class="flex items-center px-3 py-2 bg-gray-100 border border-gray-300 rounded">
+                    <!-- Search Icon -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2 text-gray-500" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                    <!-- Input -->
+                    <input type="text"
+                        class="flex-grow text-sm placeholder-gray-500 bg-transparent focus:outline-none focus:placeholder-transparent"
+                        placeholder="Search for products, brands and more" />
+                </div>
+            </div>
+        </section>
         <!-- main nav start -->
-        <div>
-            <nav>
-                <div>
-                    Kilos
-                </div>
-                <div>
-                    Mobiles
-                </div>
-                <div>
-                    Fashion
-                    <div>
-                        <ul>
-                            <li><a href="#">Men</a></li>
-                            <li><a href="#">Women</a></li>
-                            <li><a href="#">Kids</a></li>
+        <section class="bg-white">
+            <div class="container">
+                <nav class="py-3">
+                    <!-- Menu visible on all screens -->
+                    <div class="overflow-x-auto lg:overflow-visible">
+                        <ul
+                            class="flex flex-row-reverse lg:flex-row items-center gap-6 px-4 text-sm font-semibold text-gray-800 lg:justify-center lg:px-0 min-w-max snap-x snap-mandatory">
+
+                            <li class="flex flex-col items-center gap-1 min-w-[80px] snap-start">
+                                <img class="w-16 h-16"
+                                    src="https://rukminim2.flixcart.com/fk-p-flap/72/72/image/75ac28a1e9192898.png?q=100"
+                                    alt="Kilos" />
+                                <span>Kilos</span>
+                            </li>
+                            <li class="flex flex-col items-center gap-1 min-w-[80px] snap-start">
+                                <img class="w-16 h-16"
+                                    src="https://rukminim2.flixcart.com/fk-p-flap/72/72/image/cd6aca4f61e8ea95.png?q=100"
+                                    alt="Mobiles" />
+                                <span>Mobiles</span>
+                            </li>
+                            <li class="flex flex-col items-center gap-1 min-w-[80px] snap-start">
+                                <img class="w-16 h-16"
+                                    src="https://rukminim2.flixcart.com/fk-p-flap/72/72/image/9c64dfa667885ca9.png?q=100"
+                                    alt="Fashion" />
+                                <span>Fashion</span>
+                            </li>
+                            <li class="flex flex-col items-center gap-1 min-w-[80px] snap-start">
+                                <img class="w-16 h-16"
+                                    src="https://rukminim2.flixcart.com/fk-p-flap/72/72/image/4d6b13d5a0e0724a.png?q=100"
+                                    alt="Electronics" />
+                                <span>Electronics</span>
+                            </li>
+                            <li class="flex flex-col items-center gap-1 min-w-[80px] snap-start">
+                                <img class="w-16 h-16"
+                                    src="https://rukminim2.flixcart.com/fk-p-flap/72/72/image/ec2982e5564fe07c.png?q=100"
+                                    alt="Home & Furniture" />
+                                <span>Home & Furniture</span>
+                            </li>
+                            <li class="flex flex-col items-center gap-1 min-w-[80px] snap-start">
+                                <img class="w-16 h-16"
+                                    src="https://rukminim2.flixcart.com/fk-p-flap/72/72/image/8aa98ff80927c17b.png?q=100"
+                                    alt="Appliances" />
+                                <span>Appliances</span>
+                            </li>
+                            <li class="flex flex-col items-center gap-1 min-w-[80px] snap-start">
+                                <img class="w-16 h-16"
+                                    src="https://rukminim2.flixcart.com/fk-p-flap/72/72/image/cddd92e134ba3ea9.png?q=100"
+                                    alt="Flight Bookings" />
+                                <span>Flight Bookings</span>
+                            </li>
+                            <li class="flex flex-col items-center gap-1 min-w-[80px] snap-start">
+                                <img class="w-16 h-16"
+                                    src="https://rukminim2.flixcart.com/fk-p-flap/72/72/image/b003cdccee1093e4.png?q=100"
+                                    alt="Beauty, Toys & More" />
+                                <span>Beauty, Toys & More</span>
+                            </li>
+                            <li class="flex flex-col items-center gap-1 min-w-[80px] snap-start">
+                                <img class="w-16 h-16"
+                                    src="https://rukminim2.flixcart.com/fk-p-flap/72/72/image/2ebb95ec20eae8f1.png?q=100"
+                                    alt="Two Wheelers" />
+                                <span>Two Wheelers</span>
+                            </li>
                         </ul>
                     </div>
-                </div>
-                <div>
-                    Electronics
-                    <div>
-                        <ul>
-                            <li><a href="#">Mobiles</a></li>
-                            <li><a href="#">Laptops</a></li>
-                            <li><a href="#">Cameras</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div>
-                    Home & Furniture
-                    <div>
-                        <ul>
-                            <li><a href="#">Living Room</a></li>
-                            <li><a href="#">Bedroom</a></li>
-                            <li><a href="#">Kitchen</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div>
-                    Appliances
-                </div>
-                <div>
-                    Flight Bookings
-                </div>
-                <div>
-                    Beauty,Toys & more
-                    <div>
-                        <ul>
-                            <li><a href="#">Beauty</a></li>
-                            <li><a href="#">Toys</a></li>
-                            <li><a href="#">Games</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div>
-                    Two Wheelers
-                    <div>
-                        <ul>
-                            <li><a href="#">Bikes</a></li>
-                            <li><a href="#">Scooters</a></li>
-                            <li><a href="#">Accessories</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-        </div>
+                </nav>
+            </div>
+        </section>
+
         <!-- main nav end -->
+        <!-- banner start -->
+        <section class="container ">
+            <div class="mx-auto my-4">
+                <img src="https://rukminim2.flixcart.com/fk-p-flap/1620/270/image/97765e8487823791.jpeg?q=20"
+                    alt="Banner" class="object-cover w-full h-auto rounded-lg" />
+            </div>
+
+        </section>
+        <!-- banner end -->
         <!-- product category 1 start -->
-        <div>
-            <div>
-                <img src="https://rukminim2.flixcart.com/fk-p-flap/1620/270/image/97765e8487823791.jpeg?q=20" alt="">
+        <section class="container pt-1 pb-1 px-2 mx-auto relative">
+            <div class="box-border p-2 mx-auto bg-white border-2 border-gray-300">
+                <div>
+                    <div class="mb-2">
+                        <h1 class="text-xl font-semibold">Beauty, Food, Toys & More</h1>
+                    </div>
+                    <div
+                        class="flex flex-col divide-y md:flex-row md:space-x-4 md:overflow-x-auto md:whitespace-nowrap md:divide-y-0 md:items-center mt-4">
+                        <div
+                            class="flex flex-row items-center justify-between w-full py-3 border-b md:flex-col md:w-52 md:border-0 md:h-[250px] md:items-center md:justify-normal">
+                            <div class="flex items-center gap-4 md:flex-col md:items-center">
+                                <img class="w-20 h-20 object-contain"
+                                    src="https://rukminim2.flixcart.com/image/128/128/xif0q/smartwatch/n/o/z/-original-imah76jstup5zdww.jpeg?q=70&crop=false"
+                                    alt="Smartwatches" />
+                                <div class="flex flex-col">
+                                    <p class="text-sm font-semibold">Smartwatches</p>
+                                    <h3 class="text-sm font-bold text-gray-600">From ₹1,099</h3>
+                                </div>
+                            </div>
+                            <div class="text-lg text-gray-500 pr-2 md:hidden">&rsaquo;</div>
+                        </div>
+                        <div
+                            class="flex flex-row items-center justify-between w-full py-3 border-b md:flex-col md:w-52 md:border-0 md:h-[250px] md:items-center md:justify-normal">
+                            <div class="flex items-center gap-4 md:flex-col md:items-center">
+                                <img class="w-20 h-20 object-contain"
+                                    src="https://rukminim2.flixcart.com/image/128/128/xif0q/monitor/j/c/3/-original-imah5dx2akvanrgq.jpeg?q=70&crop=false"
+                                    alt="Monitors" />
+                                <div class="flex flex-col">
+                                    <p class="text-sm font-semibold">Monitors</p>
+                                    <h3 class="text-sm font-bold text-gray-600">From ₹6,599</h3>
+                                </div>
+                            </div>
+                            <div class="text-lg text-gray-500 pr-2 md:hidden">&rsaquo;</div>
+                        </div>
+                        <div
+                            class="flex flex-row items-center justify-between w-full py-3 border-b md:flex-col md:w-52 md:border-0 md:h-[250px] md:items-center md:justify-normal">
+                            <div class="flex items-center gap-4 md:flex-col md:items-center">
+                                <img class="w-20 h-20 object-contain"
+                                    src="https://rukminim2.flixcart.com/image/612/612/xif0q/projector/p/2/0/i9-pro-max-10-e03i31-led-projector-egate-original-imahay2fdgtwh6f5.jpeg?q=70"
+                                    alt="Projectors" />
+                                <div class="flex flex-col">
+                                    <p class="text-sm font-semibold">Projectors</p>
+                                    <h3 class="text-sm font-bold text-gray-600">From ₹6,990</h3>
+                                </div>
+                            </div>
+                            <div class="text-lg text-gray-500 pr-2 md:hidden">&rsaquo;</div>
+                        </div>
+                        <div
+                            class="flex flex-row items-center justify-between w-full py-3 border-b md:flex-col md:w-52 md:border-0 md:h-[250px] md:items-center md:justify-normal">
+                            <div class="flex items-center gap-4 md:flex-col md:items-center">
+                                <img class="w-20 h-20 object-contain"
+                                    src="https://rukminim2.flixcart.com/image/612/612/xif0q/printer/i/f/q/smart-all-in-one-529-hp-original-imahapy5vmhhtmyv.jpeg?q=70"
+                                    alt="Printers" />
+                                <div class="flex flex-col">
+                                    <p class="text-sm font-semibold">Printers</p>
+                                    <h3 class="text-sm font-bold text-gray-600">From ₹3,999</h3>
+                                </div>
+                            </div>
+                            <div class="text-lg text-gray-500 pr-2 md:hidden">&rsaquo;</div>
+                        </div>
+                        <div
+                            class="flex flex-row items-center justify-between w-full py-3 border-b md:flex-col md:w-52 md:border-0 md:h-[250px] md:items-center md:justify-normal">
+                            <div class="flex items-center gap-4 md:flex-col md:items-center">
+                                <img class="w-20 h-20 object-contain"
+                                    src="https://rukminim2.flixcart.com/image/612/612/xif0q/headphone/k/j/h/-original-imah4grhxrdk5t9s.jpeg?q=70"
+                                    alt="Best True Wireless Earphones" />
+                                <div class="flex flex-col">
+                                    <p class="text-sm font-semibold">Best True Wireless Earphones</p>
+                                    <h3 class="text-sm font-bold text-gray-600">Grab Now</h3>
+                                </div>
+                            </div>
+                            <div class="text-lg text-gray-500 pr-2 md:hidden">&rsaquo;</div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div>
-                <div>
-                    <h1>Beauty , Food , Toys & More</h1>
-                </div>
-                <div>
-                    <img src="https://rukminim2.flixcart.com/image/128/128/xif0q/smartwatch/n/o/z/-original-imah76jstup5zdww.jpeg?q=70&crop=false"
-                        alt="Smarwatches">
-                    <div>
-                        <p>Smartwatches</p>
-                        <h3>from ₹1,099</h3>
-                    </div>
-                </div>
-                <div>
-                    <img src="https://rukminim2.flixcart.com/image/128/128/xif0q/monitor/j/c/3/-original-imah5dx2akvanrgq.jpeg?q=70&crop=false"
-                        alt="monitors">
-                    <div>
-                        <p>Monitors</p>
-                        <h3>from ₹6,599</h3>
-                        </p>
-                    </div>
-                </div>
-                <div>
-                    <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/projector/p/2/0/i9-pro-max-10-e03i31-led-projector-egate-original-imahay2fdgtwh6f5.jpeg?q=70"
-                        alt="projectors">
-                    <div>
-                        <p>Projectors</p>
-                        <h3>from ₹6,990</h3>
-                    </div>
-                </div>
-                <div>
-                    <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/printer/i/f/q/smart-all-in-one-529-hp-original-imahapy5vmhhtmyv.jpeg?q=70"
-                        alt="printers">
-                    <div>
-                        <p>Printers</p>
-                        <h3>from ₹3,999</h3>
-                    </div>
-                </div>
-                <div>
-                    <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/headphone/k/j/h/-original-imah4grhxrdk5t9s.jpeg?q=70"
-                        alt="Best True Wireless Earphones">
-                    <div>
-                        <p>Best True Wireless Earphones</p>
-                        <h3>Grab Now</p>
-                    </div>
-                </div>
+            <div class="absolute top-0 right-0 mt-4 mr-4 hidden lg:block">
+                <img src="https://rukminim2.flixcart.com/fk-p-flap/530/810/image/4f25cd42b073b5ae.jpeg?q=20"
+                    class="object-cover w-[253px] h-[345px] relative left-[-16px] top-[-12px]" alt="Right Side Image">
             </div>
-        </div>
+        </section>
+
         <!-- product category 1 end -->
         <!-- product category 2 start -->
-        <div>
-            <div>
-                <h1>Beauty , Food , Toys & More</h1>
-            </div>
-            <div>
-                <div>
-                    <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/coffee/j/3/g/200-200-gram-100-arabica-instant-choco-mocha-make-100-cups-hot-original-imah9c6rsgqjh4qz.jpeg?q=70"
-                        alt="Coffee">
-                    <div>
-                        <p>Coffee powder</p>
-                        <h3>from ₹49</h3>
-                        </h3>
+        <section class="container sm:p-0 pt-1 pb-1 px-2 mx-auto relative">
+            <div class="box-border w-full max-w-full p-2 mx-auto bg-white border-2 border-gray-300">
+                <div class="mb-2">
+                    <h1 class="text-base font-semibold">Beauty, Food, Toys & More</h1>
+                </div>
+
+                <div
+                    class="flex flex-col space-y-3 md:flex-row md:space-x-4 md:overflow-x-auto md:whitespace-nowrap md:space-y-0">
+                    <!-- Card 1 -->
+                    <div
+                        class="flex items-center justify-between flex-shrink-0 w-full pb-3 border-b md:w-52 md:border-b-0 md:flex-col">
+                        <div class="flex items-center gap-2 md:flex-col md:items-center">
+                            <img class="object-contain w-16 h-16 flex-img"
+                                src="https://rukminim2.flixcart.com/image/612/612/xif0q/coffee/j/3/g/200-200-gram-100-arabica-instant-choco-mocha-make-100-cups-hot-original-imah9c6rsgqjh4qz.jpeg?q=70"
+                                alt="Coffee Powder">
+                            <div class="md:text-center">
+                                <p class="text-xs font-medium truncate w-[120px]">Coffee Powder</p>
+                                <h3 class="text-xs text-gray-600">Upto 80% Off</h3>
+                            </div>
+                        </div>
+                        <div class="text-lg text-gray-500 md:hidden">&rsaquo;</div>
                     </div>
-                    <div>
-                        <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/pen/z/i/y/neonpen24-kivya-original-imah95ggqqhcm4s2.jpeg?q=70"
-                            alt="Stationary">
-                        <div>
-                            <p>Top Selling Stationary</p>
-                            <h3>Up to 80% Off</h3>
-                            </h3>
+
+                    <!-- Card 2 -->
+                    <div
+                        class="flex items-center justify-between flex-shrink-0 w-full pb-3 border-b md:w-52 md:border-b-0 md:flex-col">
+                        <div class="flex items-center gap-2 md:flex-col md:items-center">
+                            <img class="object-contain w-16 h-16 flex-img"
+                                src="https://rukminim2.flixcart.com/image/612/612/xif0q/pen/z/i/y/neonpen24-kivya-original-imah95ggqqhcm4s2.jpeg?q=70"
+                                alt="Top Selling Stationery">
+                            <div class="md:text-center">
+                                <p class="text-xs font-medium truncate w-[120px]">Top Selling Stationery</p>
+                                <h3 class="text-xs text-gray-600">From ₹49</h3>
+                            </div>
                         </div>
-                        <div>
-                            <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/cycle/n/y/c/galaxy-max-geared-high-performance-mtb-cycles-for-men-with-dual-original-imahagbw9hbzdvak.jpeg?q=70"
+                        <div class="text-lg text-gray-500 md:hidden">&rsaquo;</div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div
+                        class="flex items-center justify-between flex-shrink-0 w-full pb-3 border-b md:w-52 md:border-b-0 md:flex-col">
+                        <div class="flex items-center gap-2 md:flex-col md:items-center">
+                            <img class="object-contain w-16 h-16 flex-img"
+                                src="https://rukminim2.flixcart.com/image/612/612/xif0q/cycle/n/y/c/galaxy-max-geared-high-performance-mtb-cycles-for-men-with-dual-original-imahagbw9hbzdvak.jpeg?q=70"
                                 alt="Geared Cycles">
-                            <div>
-                                <p>Geared Cycles</p>
-                                <h3>Up to 70% Off</h3>
-                                </h3>
-                            </div>
-                            <div>
-                                <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/shopsy-toy-weapon/x/n/q/manual-soft-bullet-shooting-pistol-toy-shivsoft-original-imahybvhmdzpgwc9.jpeg?q=70"
-                                    alt="Best Action Toys">
-                                <div>
-                                    <p>Best Action Toys</p>
-                                    <h3>Up to 70% Off</h3>
-                                    </h3>
-                                </div>
-                                <div>
-                                    <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/drone/o/3/a/30-1600-1-e88-drone-foldable-toy-drone-with-hq-wifi-camera-original-imagxx4uzxtgfua2.jpeg?q=70"
-                                        alt="Remote Control Toys">
-                                    <div>
-                                        <p>Remote Control Toys</p>
-                                        <h3>Up to 80% Off</h3>
-                                    </div>
-                                </div>
-                                <div>
-                                    <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/electric-cycle/p/q/k/e-drago-7-8ah-battery-front-suspension-250watts-ip65-bldc-motor-original-imah9yf4cnjyzyhb.jpeg?q=70"
-                                        alt="Electric Bikes">
-                                    <div>
-                                        <p>Electric Bikes</p>
-                                        <h3>Up to 40% Off</h3>
-                                    </div>
-                                </div>
+                            <div class="md:text-center">
+                                <p class="text-xs font-medium truncate w-[120px]">Geared Cycles</p>
+                                <h3 class="text-xs text-gray-600">Up to 70% Off</h3>
                             </div>
                         </div>
-                        <!-- product category 2 end -->
-                        <!-- product category 3 start -->
-                        <div>
-                            <div>
-                                <h1>Beauty , Food , Toys & More</h1>
-                            </div>
-                            <div>
-                                <div>
-                                    <img src="https://rukminim2.flixcart.com/image/128/128/xif0q/board-game/g/l/q/12-wooden-strong-magnetic-chess-bcbestchess-original-imah22z4hs3zynph.jpeg?q=70&crop=false"
-                                        alt="Puzzles & Cubes">
-                                    <div>
-                                        <p>Puzzles & Cubes</p>
-                                        <h3>From ₹79</h3>
-                                        </h3>
-                                    </div>
-                                    <div>
-                                        <img src="https://rukminim2.flixcart.com/image/128/128/xif0q/nut-dry-fruit/t/t/i/400-super-saver-1-plastic-bottle-bolas-original-imahffvcstm5ckbf.jpeg?q=70&crop=false"
-                                            alt="Dry Fruits">
-                                        <div>
-                                            <p>Dry Fruits</p>
-                                            <h3>Up to 75% Off</h3>
-                                            </h3>
-                                        </div>
-                                        <div>
-                                            <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/treadmill/h/w/r/ft98-steel-3hp-peak-with-max-weight-100kg-heartrate-sensor-for-original-imah6yqstynqszwk.jpeg?q=70"
-                                                alt="Treadmill">
-                                            <div>
-                                                <p>Treadmill</p>
-                                                <h3>Up to 70% Off</h3>
-                                                </h3>
-                                            </div>
-                                            <div>
-                                                <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/tea/r/p/j/-original-imah8ac2ahkrysvd.jpeg?q=70"
-                                                    alt="Tea Powder">
-                                                <div>
-                                                    <p>Tea Powder</p>
-                                                    <h3>Up to 75% Off</h3>
-                                                    </h3>
-                                                </div>
-                                                <div>
-                                                    <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/sport-mat/h/u/f/anti-slip-yoga-mat-with-carry-bag-strap-for-women-and-men-original-imah7z63nxmsdgvj.jpeg?q=70"
-                                                        alt="Yoga Mats">
-                                                    <div>
-                                                        <p>Yoga mats</p>
-                                                        <h3>From ₹149</h3>
-                                                    </div>
-                                                </div>
-                                                <div>
-                                                    <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/cereal-flake/i/h/s/450-dark-chocolate-cranberry-muesli-450-gm-83-whole-grains-nuts-original-imah9bfdyfykcekf.jpeg?q=70"
-                                                        alt="Breakfast Cereal">
-                                                    <div>
-                                                        <p>Breakfast Cereal</p>
-                                                        <h3>Up to 75% Off</h3>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- product category 3 end -->
-                                        <!-- product category grid 1 start -->
-                                        <div>
-                                            <!-- grid 1 -->
-                                            <div>
-                                                <h3>Summer Fashion</h3>
-                                                <div>
-                                                    <div>
-                                                        <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/shoe/i/6/i/-original-imah23c5tgfzdvhx.jpeg?q=70"
-                                                            alt="Men's Casual Shoes">
-                                                    </div>
-                                                    <div>
-                                                        <p>Men's Casual Shoes</p>
-                                                        <h3>Min. 70% off</h3>
-                                                    </div>
-                                                </div>
-                                                <div>
-                                                    <div>
-                                                        <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/backpack/e/m/t/13-for-college-school-travel-office-for-men-women-daypack-7-pr-original-imah9zr7g4fggme4.jpeg?q=70"
-                                                            alt="Backpacks">
-                                                    </div>
-                                                    <div>
-                                                        <p>Backpacks</p>
-                                                        <p>Min. 70% off</p>
-                                                    </div>
-                                                </div>
-                                                <div>
-                                                    <div>
-                                                        <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/suitcase/l/o/d/-original-imah9d6tx8nchhzz.jpeg?q=70"
-                                                            alt="Suitcases">
-                                                    </div>
-                                                    <div>
-                                                        <p>Suitcases</p>
-                                                        <p>min 70% off </p>
-                                                    </div>
-                                                </div>
-                                                <div>
-                                                    <div>
-                                                        <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/shoe/7/6/9/6-c284-c285-6-amico-grey-original-imah9qjz6tnasj2a.jpeg?q=70"
-                                                            alt="Men's Sports Shoes">
-                                                    </div>
-                                                    <div>
-                                                        <p>Men's Sports Shoes </p>
-                                                        <p>Min. 70% off</p>
-                                                    </div>
-                                                </div>
-                                            </div>
+                        <div class="text-lg text-gray-500 md:hidden">&rsaquo;</div>
+                    </div>
 
-                                            <!-- grid 2 -->
-                                            <div>
-                                                <h3>Festive Must-haves</h3>
-                                                <div>
-                                                    <div>
-                                                        <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/shirt/l/d/h/s-dppista-woxen-original-imah8nzz96btmygq.jpeg?q=70"
-                                                            alt="Casual's Shirt">
-                                                    </div>
-                                                    <div>
-                                                        <p>Casual's Shirt</p>
-                                                        <p>Min. 50% off</p>
-                                                    </div>
-                                                </div>
-                                                <div>
-                                                    <div>
-                                                        <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/ethnic-set/8/0/r/s-embro001-tibra-attire-original-imah7wdvs6yzypdn.jpeg?q=70"
-                                                            alt="Women's Ethnic Sets">
-                                                    </div>
-                                                    <div>
-                                                        <p>Women's Ethnic Sets</p>
-                                                        <p>Special Offers</p>
-                                                    </div>
-                                                </div>
-                                                <div>
-                                                    <div>
-                                                        <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/speaker/v/o/u/-original-imah9jtqrrhcbmvf.jpeg?q=70"
-                                                            alt="Speakers">
-                                                    </div>
-                                                    <div>
-                                                        <p>Speakers</p>
-                                                        <p>Min. 50% off</p>
-                                                    </div>
-                                                </div>
-                                                <div>
-                                                    <div>
-                                                        <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/t-shirt/y/j/h/l-mlm-arn-blacktsa-133-monkey-dluffy-t-shirt-manlino-original-imahfh7zmdh79gzf.jpeg?q=70"
-                                                            alt="Men's T-Shirts">
-                                                    </div>
-                                                    <div>
-                                                        <p>Men's T-Shirts</p>
-                                                        <p>Special offers</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <!-- grid 3 -->
-                                            <div>
-                                                <h3>Appliances for cool Summers</h3>
-                                                <div>
-                                                    <div>
-                                                        <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/speaker/t/m/a/-original-imah9xj9hnhyvarn.jpeg?q=70"
-                                                            alt="Home Theatre Systems">
-                                                    </div>
-                                                    <div>
-                                                        <p>Home Theatre Systems</p>
-                                                        <p>Special Offers</p>
-                                                    </div>
-                                                </div>
-                                                <div>
-                                                    <div>
-                                                        <img src="https://rukminim2.flixcart.com/image/612/612/ksw4ccw0/headphone/w/g/r/rockerz-450-boat-original-imag6cqqh49wjfy5.jpeg?q=70"
-                                                            alt="Wireless Headphones">
-                                                    </div>
-                                                    <div>
-                                                        <p>Wireless Headphones</p>
-                                                        <p>Min. 50% off</p>
-                                                    </div>
-                                                </div>
-                                                <div>
-                                                    <div>
-                                                        <img src="https://rukminim2.flixcart.com/image/312/312/xif0q/sports-action-camera/j/o/l/dac-002-5k-60fps-wifi-ultra-hd-with-6-axis-gyro-eis-original-imahfyt5fyfcgdbc.jpeg?q=70"
-                                                            alt="Cameras">
-                                                    </div>
-                                                    <div>
-                                                        <p>cameras</p>
-                                                        <p>Min. 30% off</p>
-                                                    </div>
-                                                </div>
-                                                <div>
-                                                    <div>
-                                                        <img src="https://rukminim2.flixcart.com/image/312/312/xif0q/fan/k/i/h/cs-2023-sb-24-50-1-ceiling-fan-600-herrricane-original-imahf5tm3d5vxdsg.jpeg?q=70"
-                                                            alt="Fans">
-                                                    </div>
-                                                    <div>
-                                                        <p>Fans</p>
-                                                        <p>Min 50% off</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                    <!-- Card 4 -->
+                    <div
+                        class="flex items-center justify-between flex-shrink-0 w-full pb-3 border-b md:w-52 md:border-b-0 md:flex-col">
+                        <div class="flex items-center gap-2 md:flex-col md:items-center">
+                            <img class="object-contain w-16 h-16 flex-img"
+                                src="https://rukminim2.flixcart.com/image/612/612/xif0q/shopsy-toy-weapon/x/n/q/manual-soft-bullet-shooting-pistol-toy-shivsoft-original-imahybvhmdzpgwc9.jpeg?q=70"
+                                alt="Remote Control Toys">
+                            <div class="md:text-center">
+                                <p class="text-xs font-medium truncate w-[120px]">Remote Control Toys</p>
+                                <h3 class="text-xs text-gray-600">Up to 80% Off</h3>
                             </div>
                         </div>
-                        <!-- product category grid 1 end -->
-                        <h1 class="text-red-500">Hello, Tailwind!</h1>
+                        <div class="text-lg text-gray-500 md:hidden">&rsaquo;</div>
+                    </div>
+
+                    <!-- Card 5 -->
+                    <div
+                        class="flex items-center justify-between flex-shrink-0 w-full pb-3 border-b md:w-52 md:border-b-0 md:flex-col">
+                        <div class="flex items-center gap-2 md:flex-col md:items-center">
+                            <img class="object-contain w-16 h-16 flex-img"
+                                src="https://rukminim2.flixcart.com/image/612/612/xif0q/electric-cycle/p/q/k/e-drago-7-8ah-battery-front-suspension-250watts-ip65-bldc-motor-original-imah9yf4cnjyzyhb.jpeg?q=70"
+                                alt="Yoga Mat">
+                            <div class="md:text-center">
+                                <p class="text-xs font-medium truncate w-[120px]">Yoga Mat</p>
+                                <h3 class="text-xs text-gray-600">From ₹159</h3>
+                            </div>
+                        </div>
+                        <div class="text-lg text-gray-500 md:hidden">&rsaquo;</div>
+                    </div>
+
+                    <!-- Card 6 -->
+                    <div
+                        class="flex items-center justify-between flex-shrink-0 w-full pb-3 border-b md:w-52 md:border-b-0 md:flex-col">
+                        <div class="flex items-center gap-2 md:flex-col md:items-center">
+                            <img class="object-contain w-16 h-16 flex-img"
+                                src="https://rukminim2.flixcart.com/image/612/612/xif0q/stuffed-toy/d/f/c/ultra-soft-cute-mickey-toy-for-girlfriend-kids-gift-60-avs-original-imahyggdgzxcf7qx.jpeg?q=70"
+                                alt="Soft Toys">
+                            <div class="md:text-center">
+                                <p class="text-xs font-medium truncate w-[120px]">Soft Toys</p>
+                                <h3 class="text-xs text-gray-600">Upto 70% Off</h3>
+                            </div>
+                        </div>
+                        <div class="text-lg text-gray-500 md:hidden">&rsaquo;</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- product category 2 end -->
+        <!-- product category 3 start -->
+        <section class="container pt-1 pb-1 px-2 mx-auto">
+            <div class="box-border w-full max-w-full p-2 mx-auto bg-white border-2 border-gray-300">
+                <div class="mb-2">
+                    <h1 class="text-base font-semibold">Beauty, Food, Toys & More</h1>
+                </div>
+
+                <div
+                    class="flex flex-col space-y-3 md:flex-row md:space-x-4 md:overflow-x-auto md:whitespace-nowrap md:space-y-0">
+                    <!-- Card 1 -->
+                    <div
+                        class="flex items-center justify-between flex-shrink-0 w-full pb-3 border-b md:w-52 md:border-b-0 md:flex-col">
+                        <div class="flex items-center gap-2 md:flex-col md:items-center">
+                            <img class="object-contain w-16 h-16 flex-img"
+                                src="https://rukminim2.flixcart.com/image/612/612/xif0q/coffee/j/3/g/200-200-gram-100-arabica-instant-choco-mocha-make-100-cups-hot-original-imah9c6rsgqjh4qz.jpeg?q=70"
+                                alt="Coffee Powder">
+                            <div class="md:text-center">
+                                <p class="text-xs font-medium truncate w-[120px]">Coffee Powder</p>
+                                <h3 class="text-xs text-gray-600">Upto 80% Off</h3>
+                            </div>
+                        </div>
+                        <div class="text-lg text-gray-500 md:hidden">&rsaquo;</div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div
+                        class="flex items-center justify-between flex-shrink-0 w-full pb-3 border-b md:w-52 md:border-b-0 md:flex-col">
+                        <div class="flex items-center gap-2 md:flex-col md:items-center">
+                            <img class="object-contain w-16 h-16 flex-img"
+                                src="https://rukminim2.flixcart.com/image/612/612/xif0q/pen/z/i/y/neonpen24-kivya-original-imah95ggqqhcm4s2.jpeg?q=70"
+                                alt="Top Selling Stationery">
+                            <div class="md:text-center">
+                                <p class="text-xs font-medium truncate w-[120px]">Top Selling Stationery</p>
+                                <h3 class="text-xs text-gray-600">From ₹49</h3>
+                            </div>
+                        </div>
+                        <div class="text-lg text-gray-500 md:hidden">&rsaquo;</div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div
+                        class="flex items-center justify-between flex-shrink-0 w-full pb-3 border-b md:w-52 md:border-b-0 md:flex-col">
+                        <div class="flex items-center gap-2 md:flex-col md:items-center">
+                            <img class="object-contain w-16 h-16 flex-img"
+                                src="https://rukminim2.flixcart.com/image/612/612/xif0q/cycle/n/y/c/galaxy-max-geared-high-performance-mtb-cycles-for-men-with-dual-original-imahagbw9hbzdvak.jpeg?q=70"
+                                alt="Geared Cycles">
+                            <div class="md:text-center">
+                                <p class="text-xs font-medium truncate w-[120px]">Geared Cycles</p>
+                                <h3 class="text-xs text-gray-600">Up to 70% Off</h3>
+                            </div>
+                        </div>
+                        <div class="text-lg text-gray-500 md:hidden">&rsaquo;</div>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div
+                        class="flex items-center justify-between flex-shrink-0 w-full pb-3 border-b md:w-52 md:border-b-0 md:flex-col">
+                        <div class="flex items-center gap-2 md:flex-col md:items-center">
+                            <img class="object-contain w-16 h-16 flex-img"
+                                src="https://rukminim2.flixcart.com/image/612/612/xif0q/shopsy-toy-weapon/x/n/q/manual-soft-bullet-shooting-pistol-toy-shivsoft-original-imahybvhmdzpgwc9.jpeg?q=70"
+                                alt="Remote Control Toys">
+                            <div class="md:text-center">
+                                <p class="text-xs font-medium truncate w-[120px]">Remote Control Toys</p>
+                                <h3 class="text-xs text-gray-600">Up to 80% Off</h3>
+                            </div>
+                        </div>
+                        <div class="text-lg text-gray-500 md:hidden">&rsaquo;</div>
+                    </div>
+
+                    <!-- Card 5 -->
+                    <div
+                        class="flex items-center justify-between flex-shrink-0 w-full pb-3 border-b md:w-52 md:border-b-0 md:flex-col">
+                        <div class="flex items-center gap-2 md:flex-col md:items-center">
+                            <img class="object-contain w-16 h-16 flex-img"
+                                src="https://rukminim2.flixcart.com/image/612/612/xif0q/electric-cycle/p/q/k/e-drago-7-8ah-battery-front-suspension-250watts-ip65-bldc-motor-original-imah9yf4cnjyzyhb.jpeg?q=70"
+                                alt="Yoga Mat">
+                            <div class="md:text-center">
+                                <p class="text-xs font-medium truncate w-[120px]">Yoga Mat</p>
+                                <h3 class="text-xs text-gray-600">From ₹159</h3>
+                            </div>
+                        </div>
+                        <div class="text-lg text-gray-500 md:hidden">&rsaquo;</div>
+                    </div>
+
+                    <!-- Card 6 -->
+                    <div
+                        class="flex items-center justify-between flex-shrink-0 w-full pb-3 border-b md:w-52 md:border-b-0 md:flex-col">
+                        <div class="flex items-center gap-2 md:flex-col md:items-center">
+                            <img class="object-contain w-16 h-16 flex-img"
+                                src="https://rukminim2.flixcart.com/image/612/612/xif0q/stuffed-toy/d/f/c/ultra-soft-cute-mickey-toy-for-girlfriend-kids-gift-60-avs-original-imahyggdgzxcf7qx.jpeg?q=70"
+                                alt="Soft Toys">
+                            <div class="md:text-center">
+                                <p class="text-xs font-medium truncate w-[120px]">Soft Toys</p>
+                                <h3 class="text-xs text-gray-600">Upto 70% Off</h3>
+                            </div>
+                        </div>
+                        <div class="text-lg text-gray-500 md:hidden">&rsaquo;</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- product category 3 end -->
+        <!-- product category 4 grid start -->
+        <section class="container p-4 mx-auto">
+            <div class="product-section">
+                <!-- grid 1 -->
+                <div class="category-container">
+                    <h3 class="text-xl font-semibold">Summer Fashion</h3>
+                    <div class="product-grid">
+                        <div class="product-card">
+                            <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/shoe/i/6/i/-original-imah23c5tgfzdvhx.jpeg?q=70"
+                                alt="Men's Shoes" class="product-img" />
+                            <p class="product-title">Men's Shoes</p>
+                            <p class="product-offer">Min. 70% off</p>
+                        </div>
+                        <div class="product-card">
+                            <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/backpack/e/m/t/13-for-college-school-travel-office-for-men-women-daypack-7-pr-original-imah9zr7g4fggme4.jpeg?q=70"
+                                alt="Backpacks" class="product-img" />
+                            <p class="product-title">Backpacks</p>
+                            <p class="product-offer">Min. 70% off</p>
+                        </div>
+                        <div class="product-card">
+                            <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/suitcase/l/o/d/-original-imah9d6tx8nchhzz.jpeg?q=70"
+                                alt="Suitcases" class="product-img" />
+                            <p class="product-title">Suitcases</p>
+                            <p class="product-offer">Min. 70% off</p>
+                        </div>
+                        <div class="product-card">
+                            <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/shoe/7/6/9/6-c284-c285-6-amico-grey-original-imah9qjz6tnasj2a.jpeg?q=70"
+                                alt="Sports Shoes" class="product-img" />
+                            <p class="product-title">Sports Shoes</p>
+                            <p class="product-offer">Min. 70% off</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- grid 2 -->
+                <div class="category-container">
+                    <h3 class="text-xl font-semibold">Festive Must-haves</h3>
+                    <div class="product-grid">
+                        <div class="product-card">
+                            <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/shirt/l/d/h/s-dppista-woxen-original-imah8nzz96btmygq.jpeg?q=70"
+                                alt="Casual's Shirt" class="product-img" />
+                            <p class="product-title">Casual's Shirt</p>
+                            <p class="product-offer">Min. 50% off</p>
+                        </div>
+                        <div class="product-card">
+                            <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/ethnic-set/8/0/r/s-embro001-tibra-attire-original-imah7wdvs6yzypdn.jpeg?q=70"
+                                alt="Ethnic Sets" class="product-img" />
+                            <p class="product-title">Ethnic Sets</p>
+                            <p class="product-offer">Special Offers</p>
+                        </div>
+                        <div class="product-card">
+                            <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/speaker/v/o/u/-original-imah9jtqrrhcbmvf.jpeg?q=70"
+                                alt="Speakers" class="product-img" />
+                            <p class="product-title">Speakers</p>
+                            <p class="product-offer">Min. 50% off</p>
+                        </div>
+                        <div class="product-card">
+                            <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/t-shirt/y/j/h/l-mlm-arn-blacktsa-133-monkey-dluffy-t-shirt-manlino-original-imahfh7zmdh79gzf.jpeg?q=70"
+                                alt="T-Shirts" class="product-img" />
+                            <p class="product-title">T-Shirts</p>
+                            <p class="product-offer">Special Offers</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- grid 3 -->
+                <div class="category-container">
+                    <h3 class="text-xl font-semibold">Appliances for Cool Summers</h3>
+                    <div class="product-grid">
+                        <div class="product-card">
+                            <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/speaker/t/m/a/-original-imah9xj9hnhyvarn.jpeg?q=70"
+                                alt="Speaker Systems" class="product-img" />
+                            <p class="product-title">Speaker Systems</p>
+                            <p class="product-offer">Special Offers</p>
+                        </div>
+                        <div class="product-card">
+                            <img src="https://rukminim2.flixcart.com/image/612/612/ksw4ccw0/headphone/w/g/r/rockerz-450-boat-original-imag6cqqh49wjfy5.jpeg?q=70"
+                                alt="Headphones" class="product-img" />
+                            <p class="product-title">Headphones</p>
+                            <p class="product-offer">Min. 50% off</p>
+                        </div>
+                        <div class="product-card">
+                            <img src="https://rukminim2.flixcart.com/image/312/312/xif0q/sports-action-camera/j/o/l/dac-002-5k-60fps-wifi-ultra-hd-with-6-axis-gyro-eis-original-imahfyt5fyfcgdbc.jpeg?q=70"
+                                alt="Cameras" class="product-img" />
+                            <p class="product-title">Cameras</p>
+                            <p class="product-offer">Min. 30% off</p>
+                        </div>
+                        <div class="product-card">
+                            <img src="https://rukminim2.flixcart.com/image/312/312/xif0q/fan/k/i/h/cs-2023-sb-24-50-1-ceiling-fan-600-herrricane-original-imahf5tm3d5vxdsg.jpeg?q=70"
+                                alt="Fans" class="product-img" />
+                            <p class="product-title">Fans</p>
+                            <p class="product-offer">Min. 50% off</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- product category 4 grid end -->
+        <section>
+            <section class="px-4 py-6 bg-gray-50 text-sm text-gray-700">
+                <div class="max-w-screen-xl mx-auto space-y-6">
+                    <h2 class="text-lg font-semibold">Top Stories: Brand Directory</h2>
+                    <h3 class="font-medium uppercase text-xs mb-1 text-gray-600">Most Searched For On Flipkart:</h3>
+                    <p class="flex flex-wrap gap-x-2 gap-y-1">
+                        Flipkart Sale | Online sale offers & deals | Google Pixel 9A | SAMSUNG F16
+                        | Mobile | POCO M7 | Nothing Phone 3a | iPhone 16e | SAMSUNG Galaxy S25 Ultra
+                        | SAMSUNG Galaxy S25 Plus | SAMSUNG Galaxy S25 | iPhone 16 | iPhone Tel Plus iPhone 16 Pro
+                        | iPhone 16 Pro Max vivo V50 | OPPO Reno13 Pro | POCO X7 | realme 14 Pro Plus
+                        | REDMI Note 14 Pro+ 5G | Whoop Band | OPPO Find X8 | Flipkart Minutes | Flipkart Exchange
+                        | Flipkart Reset | Nothing Phone 2a Plus | Sarees | CMF by Nothing Phone 1 | Pocket Bazaar
+                        | Xiaomi 14 CIVI | Infinix Note 40 Pro 5G | iPhone 15 | Infinix Note 40 5G | iPhone 15 Plus
+                        | vivo X Fold3 Pro | Motorola g04s | Vivo x 100 | OnePlus Nord CE 3 Lite 5G | SAMSUNG FlipS |
+                        SAMSUNG Fold5
+                        | Flipkart Axis Bank Super Elite Credit card | 5G Mobile Phones | Moto Edge
+                    </p>
+                    <h3 class="font-medium uppercase text-xs mb-1 text-gray-600">Mobiles:</h3>
+                    <p class="flex flex-wrap gap-x-2 gap-y-1">
+                        40 Grievance Redressal | Help Centre | Track Orders | Manage Orders
+                        | Return Orders | Gift Cards Store | Flipkart Axis Bank Credit Card
+                    </p>
+                    <h3 class="font-medium uppercase text-xs mb-1 text-gray-600">Camera:</h3>
+                    <p class="flex flex-wrap gap-x-2 gap-y-1">
+                        MOBILES Motorola 964.5G | OPPO Reno 12 Motorola Edge 50 Fusion | REDMI 12 SG | REDMI Note 13 5G
+                        | Realme 12+5G | POCO C65 | Motorola G84 | Realme CS3 | Infinix Smart B
+                        | Samsung Galaxy S23 5G Samsung Galaxy S21 FE 5G Qualcomm | vivo V30 | Samsung Galaxy 524
+                    </p>
+                    <h3 class="font-medium uppercase text-xs mb-1 text-gray-600">Laptops:</h3>
+                    <p class="flex flex-wrap gap-x-2 gap-y-1">
+                        SG Phones | Vivo 5g Phones | Oppo 5g Smart Phones | 4G Mobile
+                        | Nokia Mobile | Samsung Mobile | iphone | Oppo Mobile | Vivo Mobile
+                    </p>
+                </div>
+                </div>
+            </section>
+
+        </section>
     </main>
     <!-- main end -->
-    <footer>
+    <footer class="bg-[#212121] text-gray-300 text-sm">
+        <section>
+            <!-- Top Section -->
+            <div class="max-w-7xl mx-auto px-4 py-10 grid grid-cols-2 md:grid-cols-6 gap-6 border-b border-gray-700">
+                <div>
+                    <h3 class="text-gray-400 mb-2 font-medium">ABOUT</h3>
+                    <ul class="space-y-1">
+                        <li><a href="#" class="hover:underline">Contact Us</a></li>
+                        <li><a href="#" class="hover:underline">About Us</a></li>
+                        <li><a href="#" class="hover:underline">Careers</a></li>
+                        <li><a href="#" class="hover:underline">Flipkart Stories</a></li>
+                        <li><a href="#" class="hover:underline">Press</a></li>
+                        <li><a href="#" class="hover:underline">Corporate Information</a></li>
+                    </ul>
+                </div>
 
+                <div>
+                    <h3 class="text-gray-400 mb-2 font-medium">GROUP COMPANIES</h3>
+                    <ul class="space-y-1">
+                        <li><a href="#" class="hover:underline">Myntra</a></li>
+                        <li><a href="#" class="hover:underline">Cleartrip</a></li>
+                        <li><a href="#" class="hover:underline">Shopsy</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-gray-400 mb-2 font-medium">HELP</h3>
+                    <ul class="space-y-1">
+                        <li><a href="#" class="hover:underline">Payments</a></li>
+                        <li><a href="#" class="hover:underline">Shipping</a></li>
+                        <li><a href="#" class="hover:underline">Cancellation & Returns</a></li>
+                        <li><a href="#" class="hover:underline">FAQ</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-gray-400 mb-2 font-medium">CONSUMER POLICY</h3>
+                    <ul class="space-y-1">
+                        <li><a href="#" class="hover:underline">Cancellation & Returns</a></li>
+                        <li><a href="#" class="hover:underline">Terms Of Use</a></li>
+                        <li><a href="#" class="hover:underline">Security</a></li>
+                        <li><a href="#" class="hover:underline">Privacy</a></li>
+                        <li><a href="#" class="hover:underline">Sitemap</a></li>
+                        <li><a href="#" class="hover:underline">Grievance Redressal</a></li>
+                        <li><a href="#" class="hover:underline">EPR Compliance</a></li>
+                    </ul>
+                </div>
+
+                <div class="md:col-span-1 col-span-2">
+                    <h3 class="text-gray-400 mb-2 font-medium">Mail Us:</h3>
+                    <p class="text-sm leading-5">
+                        Flipkart Internet Private Limited,<br />
+                        Buildings Alyssa, Begonia &<br />
+                        Clove Embassy Tech Village,<br />
+                        Outer Ring Road, Devarabeesanahalli Village,<br />
+                        Bengaluru, 560103,<br />
+                        Karnataka, India
+                    </p>
+                    <div class="mt-4">
+                        <h3 class="text-gray-400 font-medium mb-1">Social:</h3>
+                        <div class="flex space-x-4 text-white text-lg">
+                            <i class="fab fa-facebook cursor-pointer"></i>
+                            <i class="fab fa-twitter cursor-pointer"></i>
+                            <i class="fab fa-youtube cursor-pointer"></i>
+                            <i class="fab fa-instagram cursor-pointer"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="md:col-span-1 col-span-2">
+                    <h3 class="text-gray-400 mb-2 font-medium">Registered Office Address:</h3>
+                    <p class="text-sm leading-5">
+                        Flipkart Internet Private Limited,<br />
+                        Buildings Alyssa, Begonia &<br />
+                        Clove Embassy Tech Village,<br />
+                        Outer Ring Road, Devarabeesanahalli Village,<br />
+                        Bengaluru, 560103,<br />
+                        Karnataka, India<br />
+                        Telephone: <a href="#" class="text-blue-400">044-45614700</a> /
+                        <a href="#" class="text-blue-400">044-67415800</a>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Bottom Section -->
+            <div
+                class="max-w-7xl mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center space-y-3 md:space-y-0 text-sm">
+                <div class="flex flex-wrap gap-6 text-yellow-300">
+                    <div class="flex items-center gap-1"><i class="fas fa-briefcase"></i> Become a Seller</div>
+                    <div class="flex items-center gap-1"><i class="fas fa-bullhorn"></i> Advertise</div>
+                    <div class="flex items-center gap-1"><i class="fas fa-gift"></i> Gift Cards</div>
+                    <div class="flex items-center gap-1"><i class="fas fa-question-circle"></i> Help Center</div>
+                </div>
+                <div class="text-gray-400">&copy; 2007-2025 Flipkart.com</div>
+                <div class="flex items-center gap-2">
+                    <img src="https://img.icons8.com/color/48/000000/visa.png" class="h-5" />
+                    <img src="https://img.icons8.com/color/48/000000/mastercard.png" class="h-5" />
+                    <img src="https://img.icons8.com/color/48/000000/rupay.png" class="h-5" />
+                    <img src="https://img.icons8.com/color/48/000000/amex.png" class="h-5" />
+                </div>
+            </div>
+        </section>
     </footer>
-
 </body>
 
 </html>

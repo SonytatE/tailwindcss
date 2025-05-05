@@ -1,1 +1,65 @@
 @import "tailwindcss";
+
+.container{
+    @apply  px-4 mx-auto md:px-6 lg:px-8;
+}
+
+  /* Flexbox Class */
+.flex-img {
+    @apply flex items-center justify-center w-12 h-12; /* 48px x 48px for mobile */
+  }
+  
+  @media (min-width: 768px) {
+    .flex-img {
+      @apply w-28 h-28; /* 108px x 108px for tablet */
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .flex-img {
+      @apply w-39 h-39; /* 156px x 156px for desktop */
+    }
+  }
+/* Grid Class */
+.grid-img {
+    @apply grid w-12 h-12 place-items-center; /* 48px x 48px for mobile */
+  }
+  
+  @media (min-width: 768px) {
+    .grid-img {
+      @apply w-28 h-28; /* 108px x 108px for tablet */
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .grid-img {
+      @apply w-39 h-39; /* 156px x 156px for desktop */
+    }
+  }
+  .product-card {
+    @apply flex flex-col items-center p-2 bg-white rounded shadow-sm hover:shadow-md transition-shadow;
+  }
+
+  .product-img {
+    @apply w-full h-32 object-contain rounded;
+  }
+
+  .product-title {
+    @apply mt-2 text-center text-sm;
+  }
+
+  .product-offer {
+    @apply text-center font-bold text-green-600 text-sm;
+  }
+
+  .category-container {
+    @apply flex flex-col flex-1 gap-4 p-4 bg-white rounded-lg;
+  }
+
+  .product-grid {
+    @apply grid grid-cols-2 grid-rows-2 gap-4;
+  }
+
+  .product-section {
+    @apply container flex flex-col gap-4 p-4 mx-auto md:flex-row md:gap-x-11 md:justify-between;
+  }
